@@ -1,38 +1,44 @@
+import {request} from '../../request/index'
 //Page Object
 Page({
   data: {
-    
+    //存放banner图片数据
+    bannerList:[],
+    //导航栏图片数据
+    catesList:[]
   },
   //options(Object)
+  //页面开始加载就会触发
   onLoad: function(options){
-    
-  },
-  onReady: function(){
-    
-  },
-  onShow: function(){
-    
-  },
-  onHide: function(){
+    let bannerReq = {
+      url:'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
+    }
 
+    let catesReq = {
+      url:'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
+    }
+    //发接口，查询banner图
+    this.getSwiperList(bannerReq);
+    //发接口，查询导航栏
+    this.getCatesList(catesReq);
   },
-  onUnload: function(){
 
+  //banner数据
+  getSwiperList(params){
+    request(params).then(r => {
+      this.setData({
+        bannerList:r.data.message
+      })
+    })
   },
-  onPullDownRefresh: function(){
 
-  },
-  onReachBottom: function(){
-
-  },
-  onShareAppMessage: function(){
-
-  },
-  onPageScroll: function(){
-
-  },
-  //item(index,pagePath,text)
-  onTabItemTap:function(item){
-
+  //导航栏数据
+  getCatesList(params){
+    request(params).then(r => {
+      this.setData({
+        catesList:r.data.message
+      })
+    })
   }
+
 });
