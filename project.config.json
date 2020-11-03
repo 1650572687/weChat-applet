@@ -34,8 +34,7 @@
     "userConfirmedUseCompilerModuleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "checkSiteMap ": false
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
