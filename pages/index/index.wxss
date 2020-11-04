@@ -15,3 +15,31 @@
 .pyg_index .index_cates navigator image {
   width: 100%;
 }
+.pyg_index .keyboard input {
+  display: block;
+  position: relative;
+  top: 43px;
+  width: 306px;
+  height: 32px;
+  border: 1px solid black;
+  opacity: 0.5;
+  font-size: 0px;
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+  background-color: transparent;
+  border: 0px;
+}
+.pyg_index .keyboard .showNumBox {
+  display: flex;
+  padding: 3px;
+  width: 300px;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.pyg_index .keyboard .showNumBox li {
+  display: block;
+  height: 30px;
+  width: 30px;
+  border: 2px solid skyblue;
+}

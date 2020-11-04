@@ -5,7 +5,8 @@ Page({
     //存放banner图片数据
     bannerList:[],
     //导航栏图片数据
-    catesList:[]
+    catesList:[],
+    password:""
   },
   //options(Object)
   //页面开始加载就会触发
@@ -39,6 +40,17 @@ Page({
         catesList:r.data.message
       })
     })
+  },
+
+  changeSearch(event){
+    let that = this
+    var inputNum  = event.detail.value;
+    that.setData({
+      password:inputNum
+    })
+    console.log('this.password',event.detail.value)
+    
+    console.log('this.password',that.data.password)
   }
 
 });

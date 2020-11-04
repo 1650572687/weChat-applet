@@ -32,4 +32,16 @@
       </image>
     </navigator>
   </view>
+  <!-- 输入存单键盘 -->
+  <view class="keyboard">
+    <input type="text" maxlength="6"  value="{{password}}"  bindinput='changeSearch'></input>
+    <ul class="showNumBox">
+      <li>{{password[0]}}</li>
+      <li>{{password[1]}}</li>
+      <li>{{password[2]}}</li>
+      <li>{{password[3]}}</li>
+      <li>{{password[4]}}</li>
+      <li>{{password[5]}}</li>
+    </ul>
+  </view>
 </view>
