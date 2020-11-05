@@ -6,7 +6,8 @@ Page({
     bannerList:[],
     //导航栏图片数据
     catesList:[],
-    password:""
+    //楼层数据
+    floorList:[]
   },
   //options(Object)
   //页面开始加载就会触发
@@ -18,10 +19,16 @@ Page({
     let catesReq = {
       url:'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
     }
+
+    let floorReq = {
+      url:'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+    }
     //发接口，查询banner图
     this.getSwiperList(bannerReq);
     //发接口，查询导航栏
     this.getCatesList(catesReq);
+    //发借口，查询楼层数据
+    this.getFloorList(floorReq)
   },
 
   //banner数据
@@ -42,15 +49,15 @@ Page({
     })
   },
 
-  changeSearch(event){
-    let that = this
-    var inputNum  = event.detail.value;
-    that.setData({
-      password:inputNum
+  //楼层数据
+  getFloorList(params){
+    request(params).then(res => {
+      console.log('楼层数据==',res)
+      this.setData({
+        floorList:res.data.message
+      })
     })
-    console.log('this.password',event.detail.value)
-    
-    console.log('this.password',that.data.password)
   }
+
 
 });

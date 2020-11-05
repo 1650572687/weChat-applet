@@ -32,16 +32,32 @@
       </image>
     </navigator>
   </view>
-  <!-- 输入存单键盘 -->
-  <view class="keyboard">
-    <input type="text" maxlength="6"  value="{{password}}"  bindinput='changeSearch'></input>
-    <ul class="showNumBox">
-      <li>{{password[0]}}</li>
-      <li>{{password[1]}}</li>
-      <li>{{password[2]}}</li>
-      <li>{{password[3]}}</li>
-      <li>{{password[4]}}</li>
-      <li>{{password[5]}}</li>
-    </ul>
+
+  <!-- 楼层开始 -->
+  <view class="index_floor">
+    <view class="floor_group" hover-class="none" hover-stop-propagation="false"
+    wx:for="{{floorList}}"
+    wx:for-index="index1"
+    
+    wx:for-item="item1"
+    wx:key="index1"
+    >
+      <view class="floor_title" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="{{item1.floor_title.image_src}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+      </view>
+      <view class="floor_list" hover-class="none" hover-stop-propagation="false">
+        <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate"
+          wx:for="{{item1.product_list}}"
+          wx:for-index="index2"
+          wx:for-item="item2"
+          wx:key="name"
+
+        >
+          <image class=""  src="{{item2.image_src}}" mode="{{index2 === 0 ?'widthFix' : 'scaleToFill'}}" lazy-load="false" binderror="" bindload="">
+          </image>
+        </navigator>
+      </view>
+    </view>
   </view>
+  <!-- 楼层结束 -->
 </view>

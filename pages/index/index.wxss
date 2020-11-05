@@ -15,31 +15,33 @@
 .pyg_index .index_cates navigator image {
   width: 100%;
 }
-.pyg_index .keyboard input {
-  display: block;
-  position: relative;
-  top: 43px;
-  width: 306px;
-  height: 32px;
-  border: 1px solid black;
-  opacity: 0.5;
-  font-size: 0px;
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-  background-color: transparent;
-  border: 0px;
+.pyg_index .index_floor .floor_group .floor_title {
+  padding: 10rpx 0;
+  width: 100%;
 }
-.pyg_index .keyboard .showNumBox {
-  display: flex;
-  padding: 3px;
-  width: 300px;
-  height: 50px;
-  justify-content: space-between;
-  align-items: center;
+.pyg_index .index_floor .floor_group .floor_title image {
+  width: 100%;
 }
-.pyg_index .keyboard .showNumBox li {
-  display: block;
-  height: 30px;
-  width: 30px;
-  border: 2px solid skyblue;
+.pyg_index .index_floor .floor_group .floor_list {
+  /*
+          232 * 386 = 33.vw * height
+        */
+}
+.pyg_index .index_floor .floor_group .floor_list navigator {
+  float: left;
+  width: 33.33%;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator:nth-last-child(-n+4) {
+  height: 27.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator:nth-child(2) {
+  border-bottom: 10rpx solid #fff;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator image {
+  width: 100%;
+  height: 100%;
 }
