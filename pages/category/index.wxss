@@ -1,1 +1,23 @@
-/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .cates_box {
+  height: calc(100vh - 90rpx);
+  display: flex;
+}
+.cates .cates_box .left {
+  flex: 2;
+}
+.cates .cates_box .left .left-item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cates .cates_box .right {
+  flex: 5;
+}
