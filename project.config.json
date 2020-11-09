@@ -62,6 +62,12 @@
         {
           "name": "分类",
           "pathName": "pages/category/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/category/index",
+          "pathName": "pages/category/index",
           "scene": null
         }
       ]
