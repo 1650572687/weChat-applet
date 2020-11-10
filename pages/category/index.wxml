@@ -2,9 +2,11 @@
   <SearchInput></SearchInput>
   <view class="cates_box">
     <scroll-view scroll-y class="left">
-      <view class="left-item" hover-class="none" hover-stop-propagation="false"
+      <view class="left-item {{index===clickindex?'active':''}}" hover-class="none" hover-stop-propagation="false"
         wx:for="{{leftTitle}}"
         wx:key="*this"
+        bindtap="handlerItemTap"
+        data-index='{{index}}'
       >
         {{item}}
       </view>
@@ -16,7 +18,17 @@
         wx:for-item="item1"
         wx:for-index="index1"
       >
-        <view class="right_title">{{item1.cat_name}}</view>
+        <view class="right_title">
+          <view class="fenge" hover-class="none" hover-stop-propagation="false">
+            /
+          </view>
+          <view class="title" hover-class="none" hover-stop-propagation="false">
+            {{item1.cat_name}}
+          </view>
+          <view class="fenge" hover-class="none" hover-stop-propagation="false">
+            /
+          </view>
+        </view>
         <view class="goods_list" hover-class="none" hover-stop-propagation="false">
           <navigator
             class="goods_item"

@@ -18,11 +18,25 @@ page {
   align-items: center;
   font-size: 30rpx;
 }
+.cates .cates_box .left .active {
+  color: var(--themeColor);
+  border-left: 10rpx solid currentColor;
+}
 .cates .cates_box .right {
   flex: 5;
 }
 .cates .cates_box .right .right_box {
   width: 100%;
+}
+.cates .cates_box .right .right_box .right_title {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cates .cates_box .right .right_box .right_title .fenge {
+  color: #ccc;
+  padding: 0 10rpx;
 }
 .cates .cates_box .right .right_box .goods_list {
   width: 100%;
@@ -31,9 +45,10 @@ page {
 }
 .cates .cates_box .right .right_box .goods_list .goods_item {
   width: 33%;
+  text-align: center;
 }
 .cates .cates_box .right .right_box .goods_list .goods_item image {
-  width: 100%;
+  width: 50%;
 }
 .cates .cates_box .right .right_box .goods_list .goods_item .goods_title {
   text-align: center;

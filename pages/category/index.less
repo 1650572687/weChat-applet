@@ -18,20 +18,34 @@ page{
         align-items: center;
         font-size:30rpx;
       }
+      .active{
+        color: var(--themeColor);
+        border-left: 10rpx solid currentColor;
+      }
     }
     .right{
       flex: 5;
       .right_box{
         width: 100%;
-        .right_title{}
+        .right_title{
+          height: 80rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .fenge{
+            color: #ccc;
+            padding: 0 10rpx;
+          }
+        }
         .goods_list{
           width: 100%;
           display: flex;
           flex-wrap: wrap;
           .goods_item{
             width: 33%;
+            text-align: center;
             image{
-              width: 100%;
+              width: 50%;
 
             }
             .goods_title{
