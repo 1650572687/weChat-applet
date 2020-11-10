@@ -1,8 +1,40 @@
-<!--pages/category/index.wxml-->
-<scroll-view scroll-y="true" style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-    <view id="demo1" class="scroll-view-item demo-text-1"
-        wx:for
-    ></view>
-    <view id="demo2"  class="scroll-view-item demo-text-2"></view>
-    <view id="demo3" class="scroll-view-item demo-text-3"></view>
-</scroll-view>
+<view class="cates">
+  <SearchInput></SearchInput>
+  <view class="cates_box">
+    <scroll-view scroll-y class="left">
+      <view class="left-item" hover-class="none" hover-stop-propagation="false"
+        wx:for="{{leftTitle}}"
+        wx:key="*this"
+      >
+        {{item}}
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y class="right">
+      <view class="right_box" hover-class="none" hover-stop-propagation="false"
+        wx:for="{{rightConent}}"
+        wx:key="{{cat_id}}"
+        wx:for-item="item1"
+        wx:for-index="index1"
+      >
+        <view class="right_title">{{item1.cat_name}}</view>
+        <view class="goods_list" hover-class="none" hover-stop-propagation="false">
+          <navigator
+            wx:for="{{item1.children}}"
+            wx:key="{{cat_id}}"
+            wx:for-item="item2"
+            wx:for-index="index2"
+          >
+            <image class="" src="{{item2.cat_icon}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
+              
+            </image>
+            <view class="goods_title" hover-class="none" hover-stop-propagation="false">
+              {{item2.cat_name}}
+            </view>
+          </navigator>
+        </view>
+
+      </view>
+    </scroll-view>
+
+  </view>
+</view>
