@@ -26,15 +26,10 @@ page {
 }
 .cates .cates_box .right .right_box .goods_list {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }
 .cates .cates_box .right .right_box .goods_list .goods_item {
   width: 33%;
 }
 .cates .cates_box .right .right_box .goods_list .goods_item image {
-  width: 100%;
-}
-.cates .cates_box .right .right_box .goods_list .goods_item .goods_title {
-  text-align: center;
+  width: 33%;
 }

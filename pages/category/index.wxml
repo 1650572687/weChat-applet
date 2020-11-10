@@ -19,6 +19,7 @@
         <view class="right_title">{{item1.cat_name}}</view>
         <view class="goods_list" hover-class="none" hover-stop-propagation="false">
           <navigator
+            class="goods_item"
             wx:for="{{item1.children}}"
             wx:key="{{cat_id}}"
             wx:for-item="item2"
