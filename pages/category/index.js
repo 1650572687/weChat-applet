@@ -10,6 +10,7 @@ Page({
     leftTitle:[],//分类左边 产品名称栏目
     rightConent:[],//右边详细信息
     clickindex:0,//当前被点击的选项栏
+    clicktop:0,//点击别的分类的时候 内容区高度清零
   },
   cateList:[],//所有分类信息
 
@@ -69,8 +70,11 @@ Page({
 
     this.setData({
       clickindex:e.currentTarget.dataset.index,
-      rightConent
+      rightConent,
+      clicktop:0
     })
+
+
   }
 
 

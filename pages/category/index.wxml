@@ -11,7 +11,7 @@
         {{item}}
       </view>
     </scroll-view>
-    <scroll-view scroll-y class="right">
+    <scroll-view scroll-y class="right" scroll-top="{{clicktop}}">
       <view class="right_box" hover-class="none" hover-stop-propagation="false"
         wx:for="{{rightConent}}"
         wx:key="{{cat_id}}"
@@ -36,6 +36,7 @@
             wx:key="{{cat_id}}"
             wx:for-item="item2"
             wx:for-index="index2"
+            url="../goods_list/index?cid={{item2.cat_id}}?name={{item2.cat_name}}"
           >
             <image class="" src="{{item2.cat_icon}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
               

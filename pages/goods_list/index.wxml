@@ -1,2 +1,31 @@
 <!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<SearchInput></SearchInput>
+<!--bindtapItemChange 接受子组件的 改变属性的事件-->
+<Tabs tabs="{{tabs}}" bindtapItemChange="tapItemChange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="first_tab" hover-class="none" hover-stop-propagation="false">
+      <navigator class="goods_item" target="" url="" hover-class="navigator-hover" open-type="navigate">
+        <!--左侧 图片容器-->
+        <view class="goods_img_wrap">
+          <image class="" src="" mode="widthFix" lazy-load="false" binderror="" bindload="">
+            
+          </image>
+        </view>
+        <!--右侧商品-->
+        <view class="goods_info_wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="goods_name">海信电视</view>
+          <view class="goods_price" hover-class="none" hover-stop-propagation="false">
+            ￥3999
+          </view>
+        </view>
+      </navigator>
+        
+    </view>
+  </block>
+  <block wx:if="{{tabs[1].isActive}}">
+    销量
+  </block>
+  <block wx:if="{{tabs[2].isActive}}">
+    价格
+  </block>
+</Tabs>

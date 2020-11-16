@@ -1,0 +1,17 @@
+<!--components/Tabs/Tabs.wxml-->
+<view class="tabs" hover-class="none" hover-stop-propagation="false">
+  <view class="title">
+    <view 
+      wx:for="{{tabs}}"
+      wx:key="id"
+      class="title_item {{item.isActive?'active':''}}"
+      bindtap="handleItemTap"
+      data-index="{{index}}"
+    >
+      {{item.value}}
+    </view>
+  </view>
+  <view class="content" hover-class="none" hover-stop-propagation="false">
+    <slot></slot>
+  </view>
+</view>
