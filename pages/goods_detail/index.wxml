@@ -1,2 +1,88 @@
 <!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="detail_swiper" hover-class="none" hover-stop-propagation="false">
+    <swiper 
+        autoplay
+        circular
+        indicator-dots="true"
+    >
+        <swiper-item class="" item-id=""
+            wx:for="{{goods_detail.pics}}"
+            wx:key="pics_id"
+            bindtap="handlerPreviewImage"
+            data-image="{{item.pics_mid}}"
+        >
+            <image class="" src="{{item.pics_mid}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
+                
+            </image>
+        </swiper-item>
+          
+    </swiper>
+</view>
+
+<view class="goods-price" hover-class="none" hover-stop-propagation="false">
+    ￥{{goods_detail.goods_price}}
+</view>
+
+<view class="goods_name_row" hover-class="none" hover-stop-propagation="false">
+    <view class="goods_name">{{goods_detail.goods_name}}</view>
+    <view class="goods_collect" hover-class="none" hover-stop-propagation="false">
+        <text class="iconfont icon-shoucang" selectable="false" space="false" decode="false">
+            
+        </text>
+        <view class="collect_text" hover-class="none" hover-stop-propagation="false">
+            收藏
+        </view>
+          
+    </view>
+</view>
+
+<view class="goods_info" hover-class="none" hover-stop-propagation="false">
+    <view class="goods_info_title">图文详情</view>
+    <view class="goods_info_content" hover-class="none" hover-stop-propagation="false">
+        <!--使用富文本-->
+        <rich-text class="" nodes="{{goods_detail.goods_introduce}}">
+            
+        </rich-text>
+    </view>
+</view>
+
+<view class="btm_tool" hover-class="none" hover-stop-propagation="false">
+    <view class="tool_item">
+        <view class="iconfont icon-kefu" hover-class="none" hover-stop-propagation="false">
+            
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            客服
+        </view>
+        <button open-type="contact">客服</button>
+    </view>
+    <view class="tool_item">
+        <view class="iconfont icon-fenxiang_2" hover-class="none" hover-stop-propagation="false">
+            
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            分享
+        </view>
+        <button open-type="share">分享</button>
+    </view>
+    <navigator class="tool_item" open-type="switchTab" url="/pages/cart/inweixin ">
+        <view class="iconfont icon-gouwuche" hover-class="none" hover-stop-propagation="false">
+            
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            购物车
+        </view>
+    </navigator>
+    <view class="tool_item btn_cart" bindtap="handlerCartAdd">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            加入购物车
+        </view>
+    </view>
+    <view class="tool_item btn_buy">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            立即购买
+        </view>
+    </view>
+</view>
+
+

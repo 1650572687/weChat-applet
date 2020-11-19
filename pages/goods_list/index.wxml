@@ -4,18 +4,23 @@
 <Tabs tabs="{{tabs}}" bindtapItemChange="tapItemChange">
   <block wx:if="{{tabs[0].isActive}}">
     <view class="first_tab" hover-class="none" hover-stop-propagation="false">
-      <navigator class="goods_item" target="" url="" hover-class="navigator-hover" open-type="navigate">
+      <navigator class="goods_item" target="" url="../goods_detail/index?goods_id={{item.goods_id}}" hover-class="navigator-hover" open-type="navigate" 
+        wx:for="{{goodList}}"
+        wx:key="{{goods_id}}"
+
+
+      >
         <!--左侧 图片容器-->
         <view class="goods_img_wrap">
-          <image class="" src="" mode="widthFix" lazy-load="false" binderror="" bindload="">
+          <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1605621994&di=41dc5c96cec765bc3336f4191cc03724&src=http://secretkeycrm.digifilm.com.cn/upload/20180530/e676f667c4cdfc7e074898adab2622f2.jpg'}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
             
           </image>
         </view>
         <!--右侧商品-->
         <view class="goods_info_wrap" hover-class="none" hover-stop-propagation="false">
-          <view class="goods_name">海信电视</view>
+          <view class="goods_name">{{item.goods_name}}</view>
           <view class="goods_price" hover-class="none" hover-stop-propagation="false">
-            ￥3999
+            ￥{{item.goods_price}}
           </view>
         </view>
       </navigator>

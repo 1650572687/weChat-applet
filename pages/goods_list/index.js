@@ -1,4 +1,6 @@
 // pages/goods_list/index.js
+import {request} from '../../request/index'
+
 Page({
 
   /**
@@ -22,7 +24,17 @@ Page({
         value:'价格',
         isActive:false
       },
-    ]
+    ],
+    goodList:[],
+    total:'',//商品列表 当前请求的总数
+
+
+  },
+  queryParams:{
+    query:'',//关键字
+    cid:"",//分类id
+    pagenum:1,//页码
+    pagesize:10,//页容量
   },
 
   /**
@@ -30,6 +42,8 @@ Page({
    */
   onLoad: function (options) {
     console.log('分类页面传递过来的商品id是==',options.cid)
+    this.queryParams.cid = options.cid
+    this.getgoodList()
   },
   tapItemChange(e){
     //传递过来的索引是
@@ -48,7 +62,35 @@ Page({
     this.setData({
       tabs
     })
-  }
+  },
+  getgoodList(){
+    request({
+      url:'https://api-hmugo-web.itheima.net/api/public/v1/goods/search',
+      data:this.queryParams
+    }).then(res => {
+      console.log('结果是=====',res)
+      //存储当前的商品列表
+      this.setData({
+        goodList:[...this.data.goodList,...res.data.message.goods],
+        total:res.data.message.total
+      })
+    })
+  },
 
+
+  //下拉触底，加载数据
+  onReachBottom(){
+    console.log("下拉触底了")
+    if(this.data.goodList.length >= this.data.total){
+      wx.showToast({
+        title: '没有更多数据了',
+      });
+    }else{
+      this.queryParams.pagenum++
+      this.getgoodList()
+
+        
+    }
+  },
 
 })
