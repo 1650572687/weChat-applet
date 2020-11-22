@@ -1,2 +1,78 @@
 <!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!--收货地址-->
+<view class="revice_address_row" hover-class="none" hover-stop-propagation="false">
+    <view class="address_btn" hover-class="none" hover-stop-propagation="false" wx:if="{{!address.userName}}">
+        <button plain type="primary" bindtap="handlerGetAddress">获取收货地址</button>
+    </view>
+
+    <view wx:else class="user_info_row" hover-class="none" hover-stop-propagation="false">
+        <view class="user_info">
+            <view class="" hover-class="none" hover-stop-propagation="false">
+                {{address.userName}}
+            </view>
+            <view class="" hover-class="none" hover-stop-propagation="false">
+                {{address.all}}
+            </view>
+        </view>
+        <view class="user_phone">{{address.telNumber}}</view>
+    </view>
+</view>
+
+<!--购物车内容-->
+<view class="cart_content">
+    <view class="cart_title">购物车</view>
+    <view class="cart_main">
+        <view class="cart_item">
+            <!--复选框-->
+            <view class="cart_chk_wrap">
+                <checkbox-group bindchange="">
+                    <checkbox class="" value="" disabled="false" checked="false" color="">
+                        
+                    </checkbox>
+                </checkbox-group>
+                  
+            </view>
+            <!--商品图片-->
+            <navigator class="cart_img_wrap" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <image class="" src="http://image4.suning.cn/uimg/b2c/newcatentries/0000000000-000000000606013705_1_400x400.jpg" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+            </navigator>
+              
+            <!--商品信息-->
+            <view class="cart_info_wrap">
+                <view class="goods_name">
+                    海信(Hisense)LED55MU9600X3DUC 55英寸 4K超高清量子点电视 ULED画质 VIDAA系统
+                </view>
+                <view class="goods_price_wrap">
+                    <view class="goods_price">￥999</view>
+                    <view class="cart_num_tool">
+                        <view class="num_edit">-</view>
+                        <view class="goods_num">10</view>
+                        <view class="num_edit">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--D底部工具栏-->
+<view class="footer_tool">
+    <!--全选-->
+    <view class="all_chk_wrap">
+        <checkbox-group bindchange="">
+            <checkbox>全选</checkbox>
+        </checkbox-group>
+          
+    </view>
+    <!--总价格-->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            合计：<text class="total_price_text">￥999</text> 
+        </view>
+        <view>包含运费</view>
+    </view>
+    <!--结算-->
+    <view class="order_pay_wrap">
+        结算(2)
+    </view>
+</view>

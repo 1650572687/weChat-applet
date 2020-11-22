@@ -90,6 +90,7 @@ Page({
     wx.showToast({
       title: '加入购物车成功',
       mask: true,
+      icon:'success'
 
     });
       
