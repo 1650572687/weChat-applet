@@ -81,6 +81,7 @@ Page({
 
     if(index === -1){ //没有查询到相同id
       this.GoodsInfo.num = 1
+      this.GoodsInfo.checked = true
       cartDetail.push(this.GoodsInfo)
     }else{
       cartDetail[index].num++

@@ -65,7 +65,7 @@
         </view>
         <button open-type="share">分享</button>
     </view>
-    <navigator class="tool_item" open-type="switchTab" url="/pages/cart/inweixin ">
+    <navigator class="tool_item" open-type="switchTab" url="../cart/index">
         <view class="iconfont icon-gouwuche" hover-class="none" hover-stop-propagation="false">
             
         </view>
