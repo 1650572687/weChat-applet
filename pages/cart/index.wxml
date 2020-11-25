@@ -22,6 +22,7 @@
 <view class="cart_content">
     <view class="cart_title">购物车</view>
     <view class="cart_main">
+    <block wx:if="{{cart.length !== 0}}">
         <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
             <!--复选框-->
             <view class="cart_chk_wrap">
@@ -51,7 +52,14 @@
                     </view>
                 </view>
             </view>
-        </view>
+        </view> 
+    </block>
+    <block wx:else>
+        <image class="" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3896639434,2608684613&fm=26&gp=0.jpg" mode="widthFix" lazy-load="false" binderror="" bindload="">
+            
+        </image>
+    </block>
+
     </view>
 </view>
 
@@ -72,7 +80,7 @@
         <view>包含运费</view>
     </view>
     <!--结算-->
-    <view class="order_pay_wrap">
+    <view class="order_pay_wrap" bindtap="handlerPay">
         结算({{totalNum}})
     </view>
 </view>

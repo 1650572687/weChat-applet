@@ -1,2 +1,3 @@
 <!--pages/auth/index.wxml-->
-<text>pages/auth/index.wxml</text>
+<!--获取用户权限-->
+<button open-type="getUserInfo"></button>

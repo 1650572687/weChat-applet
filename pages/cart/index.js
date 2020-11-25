@@ -132,13 +132,36 @@ Page({
     let index = cart.findIndex(v => v.goods_id === checkId)
 
     //将此商品数量减1
-     cart[index].num--
-     if(cart[index].num === 0){ //从数据种删除
-      cart.splice(index,1)
-     }
 
-     //更新数据 重新计算
-     this.setCart(cart)
+
+     //商品数量剩余为1 的时候 进行弹窗提示是否删除
+     if(cart[index].num === 1){
+      let that = this
+      wx.showModal({
+        title: '提示',
+        content: '是否要删除',
+        success (res) {
+          if (res.confirm) {
+            cart[index].num--
+            cart.splice(index,1)
+            //更新数据 重新计算
+            that.setCart(cart)
+          } else if (res.cancel) {
+            // console.log('用户点击取消')
+          }
+        }
+      })
+      
+     }else{
+      cart[index].num--
+      //更新数据 重新计算
+      this.setCart(cart)
+     }
+    //  if(cart[index].num === 0){ //从数据种删除
+    //   cart.splice(index,1)
+    //  }
+
+
   },
 
   //点击 增加商品数量
@@ -176,6 +199,32 @@ Page({
 
       //将更新以后的数据 重新存储到缓存种
       wx.setStorageSync('cart', cart);
+  },
+
+  //点击支付按钮
+  handlerPay(){
+    let {address,totalNum} = this.data
+    //判断是否有收货信息
+    if(!address.userName){
+      wx.showToast({
+        title: '无选择收货地址',
+      });
+      return;
+    }
+
+    //判断是否有选购商品
+    if(totalNum === 0){
+      wx.showToast({
+        title: '无商品',
+      });
+      return;
+    }
+
+    //跳转支付页面
+    wx.navigateTo({
+      url: '/pages/pay/index',
+    });
+      
   },
 
   /**
