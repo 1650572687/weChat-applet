@@ -43,3 +43,15 @@ export const getChoseAddress = () => {
           
     })
 }
+
+//wx-login 登录接口
+export const login = () => {
+    return new Promise((resolve,reject) => {
+        wx.login({
+            timeout:10000,
+            success: (result)=>{
+                resolve(result)
+            },
+        });
+    })
+}

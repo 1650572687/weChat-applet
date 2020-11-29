@@ -1,3 +1,4 @@
 <!--pages/auth/index.wxml-->
 <!--获取用户权限-->
-<button open-type="getUserInfo"></button>
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="handlerGetUserInfo">授权
+</button>
